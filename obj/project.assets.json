@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\notatnki\\C#\\Memory\\Memory.csproj",
+      "projectUniqueName": "D:\\Projekty\\GHit\\Repositories\\MemoryCard\\Memory.csproj",
       "projectName": "Memory",
-      "projectPath": "D:\\notatnki\\C#\\Memory\\Memory.csproj",
+      "projectPath": "D:\\Projekty\\GHit\\Repositories\\MemoryCard\\Memory.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\notatnki\\C#\\Memory\\obj\\",
+      "outputPath": "D:\\Projekty\\GHit\\Repositories\\MemoryCard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",

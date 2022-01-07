@@ -1,8 +1,0 @@
-Zrobiłem pracę na czas tylko niepotrzebnie usunąłem jedną komendę. 
-Praca różni się linijką 49.
-
-Pierwsza praca z histroii działa tylko raz.
-Memory1.rar ma sytem ciągłej gry, po naciśnięciu na napis "Play again"
-MemoryKoniecFinal.rar ma zabezpieczenie przed nacisnieciem dwa razy tego samego pola.
-
-Miłego dnia życzę!
