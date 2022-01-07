@@ -19,12 +19,12 @@ namespace Memory
         {
             InitializeComponent();
             SetUpGame();
-            plansza.Background = Brushes.LightGray;
+            board.Background = Brushes.LightGray;
         }
 
         private void SetUpGame()
         {
-            List<string> pola = new List<string>()
+            List<string> fields = new List<string>()
             {
                 "/images/czaszka.jpg", "/images/czaszka.jpg",
                 "/images/moneta.jpg", "/images/moneta.jpg",
@@ -34,16 +34,16 @@ namespace Memory
             };
             Random random = new Random();
 
-            foreach (Image image in plansza.Children.OfType<Image>())
+            foreach (Image image in board.Children.OfType<Image>())
             {
                 image.IsEnabled = true;
                 image.Visibility = Visibility.Visible;
                 image.Opacity = hidden;
-                int index = random.Next(pola.Count);
-                string nextEmoji = pola[index];
+                int index = random.Next(fields.Count);
+                string nextEmoji = fields[index];
                 image.Source = new BitmapImage(new Uri(@$"{nextEmoji}", UriKind.Relative));
-                Pokaz(image);
-                pola.RemoveAt(index);
+                ShowTiles(image);
+                fields.RemoveAt(index);
             }
             matchesFound = 0;
         }
@@ -51,14 +51,14 @@ namespace Memory
         Image lastImageClicked;
         bool findingMatch = false;
 
-        public async void Pokaz(Image image)
+        public async void ShowTiles(Image image)
         {
             image.Opacity = 1f;
             await Task.Delay(2500);
             image.Opacity = hidden;
         }
 
-        public async void Znaleziono(Image image)
+        public async void Found(Image image)
         {
             lastImageClicked.Opacity = 1f;
             image.Opacity = 1f;
@@ -67,7 +67,7 @@ namespace Memory
             lastImageClicked.Visibility = Visibility.Hidden;
         }
 
-        public async void NiePomylka(Image image)
+        public async void Failed(Image image)
         {
             lastImageClicked.Opacity = 1f;
             image.Opacity = 1f;
@@ -77,7 +77,7 @@ namespace Memory
         }
 
 
-        private void Kliknij(object sender, MouseButtonEventArgs e)
+        private void Press(object sender, MouseButtonEventArgs e)
         {
             Image image = (Image)sender;
             image.Opacity = 1f;
@@ -90,19 +90,19 @@ namespace Memory
             else if (Convert.ToString(image.Source) == Convert.ToString(lastImageClicked.Source))
             {
                 matchesFound++;
-                Znaleziono(image);
+                Found(image);
                 findingMatch = false;
             }
             else
             {
                 lastImageClicked.Opacity = 1f;
                 image.Opacity = 1f;
-                NiePomylka(image);
+                Failed(image);
                 lastImageClicked.IsEnabled = true;
                 image.IsEnabled = true;
                 findingMatch = false;
             }
-            if (matchesFound == 4)
+            if (matchesFound == 4 )
             {
                 info.Content = " - Play again?";
             }
@@ -112,7 +112,7 @@ namespace Memory
             }
         }
 
-        private void Wygrana(object sender, MouseButtonEventArgs e)
+        private void Won(object sender, MouseButtonEventArgs e)
         {
             if (matchesFound == 4)
             {

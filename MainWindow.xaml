@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="plansza">
+    <Grid x:Name="board">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -21,43 +21,43 @@
             x:Name="one"
             Grid.Row="0"
             Grid.Column="0"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="two"
             Grid.Row="0"
             Grid.Column="1"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="three"
             Grid.Row="0"
             Grid.Column="2"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="four"
             Grid.Row="1"
             Grid.Column="0"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="five"
             Grid.Row="1"
             Grid.Column="1"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="six"
             Grid.Row="1"
             Grid.Column="2"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="seven"
             Grid.Row="2"
             Grid.Column="0"
-            MouseLeftButtonDown="Kliknij"/>
+            MouseLeftButtonDown="Press"/>
         <Image 
             x:Name="eight"
             Grid.Row="2"
             Grid.Column="1"
-            MouseLeftButtonDown="Kliknij"/>
-        <Label x:Name="info"  FontSize="20px" MouseDown="Wygrana" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+            MouseLeftButtonDown="Press"/>
+        <Label x:Name="info"  FontSize="20px" MouseDown="Won" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
 
     </Grid>
 </Window>
